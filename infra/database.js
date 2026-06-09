@@ -10,7 +10,7 @@ async function query(queryObject) {
     user: process.env.POSTGRES_USER, // o usuário do banco de dados, ou seja, o nome de usuário que tem acesso ao banco de dados. No caso, postgres é o usuário padrão do banco de dados postgres.
     database: process.env.POSTGRES_DB, // o nome do banco de dados, ou seja, o nome do banco de dados que você quer conectar. No caso, postgres é o nome do banco de dados padrão do postgres.
     password: process.env.POSTGRES_PASSWORD, // a senha do banco de dados, ou seja, a senha do usuário que tem acesso ao banco de dados. No caso, localpostgres é a senha que eu configurei para o usuário postgres no meu banco de dados.
-    ssl: { rejectUnauthorized: false },
+    ssl: true,
   }); // a variavel client , recebe uma nova instancia da classe client, ou seja, ela é um objeto que tem os metodos para conectar com o banco de dados, fazer consultas, etc.
   console.log("Credencias do Postgres:", {
     host: process.env.POSTGRES_HOST,
