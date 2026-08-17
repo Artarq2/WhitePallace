@@ -15,7 +15,7 @@
     "lembrete": "configurar eslint next13",
     "test": "npm run services:up && concurrently -n next,jest --hide next -k -s command-jest \"next dev\"  \"jest --runInBand --verbose\"",
     "posttest": "npm run services:stop",
-    "test:watch": "jest --watchAll --runInBand",
+    "test:watch": "jest --watchAll --runInBand --verbose",
     "migrations:create": "node-pg-migrate --migrations-dir infra/migrations create",
     "migrations:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
     "services:wait:database": "node infra/scripts/wait-for-postgres.js",
