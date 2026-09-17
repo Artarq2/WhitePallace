@@ -1,5 +1,5 @@
 import migrationRunner from "node-pg-migrate"; // migrationRunner verifica quais migraçoes foram aplicadas e executadas as pendentes
-import { join } from "node:path";
+import { resolve } from "node:path";
 import database from "infra/database.js";
 
 export default async function migrations(request, response) {
@@ -15,7 +15,7 @@ export default async function migrations(request, response) {
     const defaultMigrationsOptions = {
       dbClient: dbClient,
       dryRun: true, // roda as migrações sem aplicalas
-      dir: join("infra", "migrations"), //diretorio de onde está as migrations
+      dir: resolve("infra", "migrations"), //diretorio de onde está as migrations
       direction: "up",
       verbose: true, // informar oque está fazendo
       migrationsTable: "pgmigrations", // em qual tabela
